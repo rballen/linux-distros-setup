@@ -1,0 +1,25 @@
+[Desktop Entry]
+Version=1.0
+Name=Gmail
+Exec=google-chrome --app="https://mail.google.com/mail"
+Terminal=false
+Icon=/media/jorge/gmail.png
+Type=Application
+Categories=Network;WebBrowser;
+
+X-Ayatana-Desktop-Shortcuts=Compose;Contacts;Calendar
+
+[Compose Shortcut Group]
+Name=Compose New Message
+Exec=google-chrome --app='https://mail.google.com/mail/?shva=1#compose'
+TargetEnvironment=Unity
+
+[Contacts Shortcut Group]
+Name=Contacts
+Exec=google-chrome --app='http://www.google.com/contacts'
+TargetEnvironment=Unity
+
+[Calendar Shortcut Group]
+Name=Calendar
+Exec=google-chrome --app='http://calendar.google.com'
+TargetEnvironment=Unity
