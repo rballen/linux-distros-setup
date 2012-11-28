@@ -64,27 +64,10 @@ npm install --save docpad-plugin-cachr
 npm install --save docpad-plugin-associatedfiles
 
 
-
-# npm install -f docpad-plugin-eco
-# npm install -f docpad-plugin-coffeescript#
-# npm install -f docpad-plugin-coffeekup
-# npm install -f docpad-plugin-haml
-# npm install -f docpad-plugin-handlebars
-# npm install -f docpad-plugin-hogan
-# npm install -f docpad-plugin-jade
-# npm install -f docpad-plugin-js2coffee
-# npm install -f docpad-plugin-less
-# npm install -f docpad-plugin-marked
-# npm install -f docpad-plugin-sass
-# npm install -f docpad-plugin-stylus
-# npm install -f docpad-plugin-associatedfiles
-# npm install -f docpad-plugin-buildr
-# npm install -f docpad-plugin-cachr
-# npm install -f docpad-plugin-cleanurls
-# npm install -f docpad-plugin-feedr
-# npm install -f docpad-plugin-highlightjs
-# npm install -f docpad-plugin-partials
-# npm install -f docpad-plugin-pygments
+npm install -g docpad
+git clone http://github.com/georgeOsdDev/slidepad.git
+cd slidepad
+npm install
 
 
 echo "validate for yeoman"

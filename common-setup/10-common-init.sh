@@ -1,21 +1,13 @@
 #!/bin/bash
-# This script sets up the common partions and group/name ids so that my data can linux 
-# in the superiour li
+# This script sets up the common partions and group/name ids so that my data flows accross all the distros, 
+# mac osx and windose
 #
-##############################
-#@todo if ubuntu elseif arch
-sudo apt-get update && sudo apt-get upgrade
 
 ##############################
 # dotfiles 
 ##############################
-# set up git
-git config --global user.email "robert.burch.allen@gmail.com"
-git config --global user.name "rballen"
-mkdir -p ~/tmp
-cd ~/tmp
-git clone https://github.com/rballen/sublime-text-2.git
-git clone https://github.com/rballen/dotfiles.git
+# moved them into their own repo to be like the cool kids
+
 
 ##############################
 # user & groups 
@@ -58,20 +50,20 @@ sudo chown ra:dev /media/resources/ -R
 sudo mkdir /mnt/{grub,ubuntu,mint,arch,sabayon,voyager,elementary}
 
 sudo cp /etc/fstab /etc/fstab.original
-# cant echo to system files so pipe to sed instead of escaping since it's paths
+# cant echo to system files so pipe to sed - uncomment all but current /
 echo "#"  | sudo tee -a /etc/fstab
 echo "/dev/sda9     /media/stage       ext4     defaults	0	0" | sudo tee -a /etc/fstab
 echo "/dev/sda10    /media/data	       ext4     defaults	0	0"  | sudo tee -a /etc/fstab
 echo "/dev/sda11    /media/resources   ntfs-3g  defaults	0	0"  | sudo tee -a /etc/fstab
 echo "#"  | sudo tee -a /etc/fstab
 echo "# hide these" | sudo tee -a /etc/fstab
-echo "/dev/sda1     /media/grub       ext4     noauto,nouser,ro    0	0" | sudo tee -a /etc/fstab
-echo "/dev/sda2    /media/ubuntu      ext4     noauto,nouser,ro    0	0"  | sudo tee -a /etc/fstab
-echo "/dev/sda3    /media/mint        ext4     noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
-echo "/dev/sda5    /media/arch	       ext4    noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
-echo "/dev/sda6    /media/sabayon     ext4     noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
-echo "/dev/sda7    /media/elementary   ext4    noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
-echo "/dev/sda8    /media/voyager      ext4    noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
+#echo "/dev/sda1     /media/grub       ext4     noauto,nouser,ro    0	0" | sudo tee -a /etc/fstab
+#echo "/dev/sda2    /media/ubuntu      ext4     noauto,nouser,ro    0	0"  | sudo tee -a /etc/fstab
+#echo "/dev/sda3    /media/mint        ext4     noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
+#echo "/dev/sda5    /media/arch	       ext4    noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
+#echo "/dev/sda6    /media/sabayon     ext4     noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
+#echo "/dev/sda7    /media/elementary   ext4    noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
+#echo "/dev/sda8    /media/voyager      ext4    noauto,nouser,ro	   0	0"  | sudo tee -a /etc/fstab
 
 sudo umount -a
 
@@ -107,7 +99,7 @@ fi
 # sym links to unite partitions
 # partition 'resources' - ntfs - all my shareable resources - music, videos, books, tuts, pics, etc
 # partition 'data' - ext4 - my tools, project files, repos ,etc
-# partition 'stage' - ext4 - locked down - personal documents, tax stuff, etc
+# partition 'stage' - ext4 - locked down - personal documents, tax stuff, naked photos, etc
 ##############################
 ln -s /media/data/VMs/ ~/
 ln -s /media/data/Downloads ~/
@@ -117,18 +109,17 @@ ln -s /media/data/Projects/ ~/
 ln -s /media/data/Pictures ~/
 ln -s /media/resources/Music ~/
 ln -s /media/resources/Videos ~/
-ln -s /media/resources/Sanatana-Dharma ~/
+ln -s /media/resources/Trippy-Gods ~/Vedas
 ln -s /media/data/VMs ~/
 ln -s /media/resources/Dropbox/common/reference/ ~/.reference
 ln -s /media/data/Projects/github/rballen ~/
 
 # link app settings for same data no matter what distro
-ln -s /media/data/home/ra/Templates/ ~/
+ln -s ~/rballen/linux-distro-setup/Templates/ ~/
 ln -s /media/data/home/ra/filezilla/ ~/.filezilla
 ln -s /media/data/home/ra/fonts/ ~/.fonts
 ln -s /media/data/home/ra/themes/ ~/.themes
 ln -s /media/data/home/ra/icons/ ~/.icons
-ln -s /media/data/home/ra/jCodeCollector/ ~/.jCodeCollector
 ln -s /media/data/home/ra/xmind/ ~/.xmind
 ln -s /media/data/m2 ~/.m2
 #ln -s /media/data/home/ra/workspace/ ~/
@@ -145,16 +136,18 @@ ln -s /media/resources/Dropbox/Media/wallpaper/the-gods/ ~/Pictures/wallpaper/
 # webdev 
 ##############################
 # system user: 'www-data' group: 'dev'  to run servers
-sudo adduser --system www-data 
-sudo usermod -aG dev www-data 
-sudo chown www-data:dev /media/data/www -R
+# it's only me so going back to ra:dev
+#sudo adduser --system www-data 
+#sudo usermod -aG dev www-data 
+#sudo chown www-data:dev /media/data/www -R
 chmod g+w /srv/www -R
 sudo ln -s /media/data/www /srv/
 
 ln -s /srv/www/public_html ~/
 ln -s /srv/www ~/
 
-sudo chown -R www-data:dev /var/log/lighttpd
+sudo mkdir -p /var/log/lighttpd
+sudo chown -R ra:dev /var/log/lighttpd
 
 ##############################
 # common apps
