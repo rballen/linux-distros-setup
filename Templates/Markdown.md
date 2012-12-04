@@ -1,29 +1,38 @@
 Title
 ================
-![Image](/media/resources/Graphics/Installous.png)
+![logo](http://ombuntu.com/ombuntu-logo.png)
+
 [rballen](http://rballen.github.com)
-[robuntu][1]
-[ombuntu][2]
 
-## intro
-**bold**
-*italic*
+### header
+####sub header
+#####h5
+######h6 
 
-### Getting Started
-1. `npm install`
-2. `cp config-sample.json config.json`
-3. Edit config.json per https://github.com/scottgonzalez/grunt-wordpress#config
-4. `grunt deploy`
 
-## Documentation
+**bold** or __bold__
 
-### javascript
+*italic* or _italic_
 
-```javascript
-var grunt_init_node_sample = require('grunt-init-node-sample');
-grunt_init_node_sample.awesome(); // "awesome"
+```terminal
+function thumbsx480 (){
+  filelist=`ls | grep -i '.jpg'`
+  mkdir -p thumbs
+  for f in $filelist
+  do
+    convert $f -auto-orient -resize x480 -unsharp 0x.5 ./thumbs/${f%.*}_x480.jpg
+  done
+}
 ```
 
-[1]: http://robuntu.com  robuntu
-[2]: http://ombuntu.com  ombuntu
+### ordered lists
+1. `npm install`
+1. `cp config-sample.json config.json`
+1. Edit config.json per https://github.com/scottgonzalez/grunt-wordpress#config
+1. `grunt deploy`
 
+
+or
+
+* unordered
+* lists
