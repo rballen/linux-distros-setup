@@ -6,11 +6,11 @@
 clear
 
 #The folder on the remote system that must be used to store the data
-$backup_folder = '/home/neo/Backup'; #Final '/' must NOT be there.
+$backup_folder = '/home/ra/Backup'; #Final '/' must NOT be there.
 # The user for whom we have set up the key based login
-$backup_user = 'neo';
-# The IP address/domain name of the remote system.
-$backup_server = '192.168.0.30';
+$backup_user = 'ra';
+# The IP address/domain name of the remote system. currently my rasperry pi
+$backup_server = '192.168.1.5';
 
 use File::Basename;
 my $config_file = dirname($0) . "/rsyncnetworkbackup.config";
