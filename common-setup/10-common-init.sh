@@ -15,7 +15,7 @@
 # create consistant groups across all *nix computers in my network
 sudo groupadd robuntu -g 1111
 sudo groupadd dev -g 1112
-sudo usermod -G robuntu,dev ra
+sudo usermod -aG robuntu,dev ra
 sudo usermod -g dev ra
 
 # create extra account and keep pristine in case i mess something up.
@@ -153,7 +153,10 @@ sudo chown -R ra:dev /var/log/lighttpd
 # common apps
 ##############################
 # https://github.com/rupa/z
-wget https://github.com/rupa/z/raw/master/z.sh -O /home/ra/bin/z.sh
-
-
-
+# wget https://github.com/rupa/z/raw/master/z.sh -O /home/ra/bin/z.sh
+git clone git://github.com/huyng/bashmarks.git
+make install
+echo " " >> ~/.bashrc
+echo ". ~/.local/bin/bashmarks.sh"  >> ~/.bashrc
+echo " " >> ~/.bashrc
+. ~/.local/bin/bashmarks.sh
