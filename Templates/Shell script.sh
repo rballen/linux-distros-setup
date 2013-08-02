@@ -1,7 +1,7 @@
 #!/bin/bash
 ####################################
-# xxxxxx
-# chmod +x xxxx.sh && ./xxxx.sh
+# rballen
+# description
 ####################################
 clear
 
