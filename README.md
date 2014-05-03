@@ -26,11 +26,35 @@ various scripts - mostly from other  good developers
 ## ubuntu
 setup for debian/ubuntu family
 
-## kernel parameters
-use grub-customizer and pass the following:   
+## boot
+use grub-customizer to set --> general settings --> kernel parameters    
 `quiet splash acpi_osi=Linux acpi_backlight=vendor i915.semaphores=1 elevator=noop`
 
+### custom boot image
+```sh
+cd /usr/share/images
+sudo wget http://files.robuntu.com/themes/grub_buddha.png
+```
+use grub-customizer --> Apperance Settings - to set background image    
 
+### custom boot sound
+```sh
+mkdir -p ~/.sound && cd ~/.sound
+wget http://files.robuntu.com/themes/om.ogg
+# for xfce (voyager) i modify ~/.config/autostart/Son start.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Son start
+Comment=
+Exec=play ~/.sound/om.ogg
+StartupNotify=false
+Terminal=false
+Hidden=false
+
+```
+and finally make sure Indicator Sound is checked under Settings --> Session and Startup --> Application autostart
 
 ### todo
 - [ ] give brief summary of partitions and linking for data and resources
