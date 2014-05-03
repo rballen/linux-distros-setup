@@ -1,7 +1,6 @@
 linux-distros-setup
 ===================
-linux-distros-setup
-===================
+
 I'm a distro junkie and usually have 4 bootable distros and one or two in the vm on my computers - including the raspberry pi. These scripts and my structure allow me to get a distro up and running in about and hour with minimal impact to my workflow and no loss of data. 
 
 __assumes the [dotfiles/setup](https://github.com/rballen/dotfiles) has been run__
@@ -26,6 +25,11 @@ various scripts - mostly from other  good developers
 
 ## ubuntu
 setup for debian/ubuntu family
+
+## kernel parameters
+use grub-customizer and pass the following:   
+`quiet splash acpi_osi=Linux acpi_backlight=vendor i915.semaphores=1 elevator=noop`
+
 
 
 ### todo
