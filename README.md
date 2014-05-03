@@ -5,6 +5,8 @@ I'm a distro junkie and usually have 4 bootable distros and one or two in the vm
 
 __assumes the [dotfiles/setup](https://github.com/rballen/dotfiles) has been run__
 
+git clone https://github.com/rballen/linux-distros-setup.git
+
 ## arch
 setup for arch based distros
 
