@@ -1,0 +1,29 @@
+server {
+    listen 80;
+
+    # The host name to respond to
+    server_name acer.local;
+
+    # Path for static files
+    root /var/www/public_html;
+    index index.html README.md index.php index.htm;
+
+    #Specify a charset
+    charset utf-8;
+
+
+    location / {
+        try_files $uri $uri/ =404;
+		autoindex on;
+    }
+
+    # NOTE: You should have "cgi.fix_pathinfo = 0;" in /etc/php5/fpm/ php.ini
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+}
+
