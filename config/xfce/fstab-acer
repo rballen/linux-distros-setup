@@ -1,0 +1,23 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda4 during installation
+UUID=18bf09b0-04a0-4aa2-8701-53a0f3cb1536 /               ext4    noatime,errors=remount-ro 0       1
+# /media/data was on /dev/sda7 during installation
+UUID=c34dfe50-ce9e-465a-b475-f603fea9d36a /media/data     ext4    defaults,noatime        0       2
+# /media/robuntu was on /dev/sda8 during installation
+UUID=69a8988c-e0cf-499e-9ce4-d3de3ebca800 /media/robuntu  ext4    defaults,noatime        0       2
+# /media/solid was on /dev/sdb1 during installation
+UUID=b05e3d9b-23f1-4781-a84c-2391f444d793 /media/solid    ext4    defaults,noatime,discard        0       2
+# swap was on /dev/sda2 during installation
+UUID=a9443d6a-582c-4b41-9200-63183468c2a7 none            swap    sw              0       0
+# ***uncomment all but your current root***
+#
+UUID=3d7404a7-4102-41ff-81bd-28a2fd2966a9   /mnt/openbox             ext4     noauto,nouser,ro 0  0
+#UUID=8e0b27b3-46a6-409e-8021-e9f35ca06e44   /mnt/voyager           ext4     noauto,nouser,ro 0  0
+UUID=6db9474b-9577-4f5f-b344-9b60917242ea    /mnt/elementary        ext4     noauto,nouser,ro 0  0
+UUID=60a1237a-f539-47be-be54-7fc51cc4f166     /mnt/manjaro            ext4     noauto,nouser,ro 0  0
