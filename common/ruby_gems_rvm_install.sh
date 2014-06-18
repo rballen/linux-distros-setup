@@ -18,7 +18,7 @@ gem update --system
 
 gem install sass bourbon neat bitters
 gem install compass toolkit compass-recipes
-gem install bundler rake
+#gem install bundler rake
 # https://github.com/team-sass/toolkit
 gem install compass-colors color-schemer
 gem install foundation semantic-ui-sass
@@ -29,7 +29,7 @@ gem install respond-to modular-scale
 gem install cheat snipcheat
 # generate html file from sublime-text snippets
 # snipcheat generate -d Packages/Rails -o ~/rails_cheatsheet.html
-gem install
+#gem install
 
 
 # compass create compass-project -r semantic-ui-sass --using semantic-ui
