@@ -27,5 +27,6 @@ npm install -g marked feedr
 npm install -g autoprefixer jshint less
 npm install -g generator-server-configs http-server
 npm install -g deployd generator-deployd
+npm install -g kuler2gpl
 echo "finished installing nodejs"
 
