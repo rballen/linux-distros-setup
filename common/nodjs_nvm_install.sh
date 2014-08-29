@@ -1,5 +1,5 @@
 
-VERSION="0.10.28"
+VERSION="0.10.31"
 
 git clone https://github.com/creationix/nvm.git ~/.nvm
 . ~/.nvm/nvm.sh
@@ -19,14 +19,12 @@ echo 'PATH=$NVM_BIN:$PATH' >> ~/.bashrc
 echo "install node modules"
 # npm install -g npm
 npm install -g node-gyp
-npm install -g yo gulp
-npm install -g traceur
-npm install -g generator-karma generator-angular generator-gulp-webapp generator-gulp-ng generator-ng-scaffold
-npm install -g slush slush-angular slush-webapp
-npm install -g marked feedr
-npm install -g autoprefixer jshint less
-npm install -g generator-server-configs http-server
-npm install -g deployd generator-deployd
-npm install -g kuler2gpl
+npm install -g yo karma gulp
+npm install -g generator-karma generator-gulp generator-gulp-webapp
+npm install -g generator-angular generator-gulp-angular generator-ng-poly generator-mobile
+npm install -g generator-polymer-gulp generator-deployd generator-server-configs
+npm install -g slush slush-webapp slush-angular
+npm install -g traceur vulcanize less jasmine-node
+npm install -g autoprefixer jshint feedr kuler2gpl marked
 echo "finished installing nodejs"
 
