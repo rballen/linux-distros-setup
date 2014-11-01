@@ -30,16 +30,15 @@ make install
 
 #UUID=A80E38E70E38B064 /mnt/Storage ntfs-3g  defaults,umask=077,uid=1000 0 0
 
-sudo mkdir -p /mnt/isoimage
-sudo mkdir -p /media/{data,robuntu,solid}     # my common partions
-sudo mkdir -p  /mnt/{openbox,voyager,elementary,manjaro}
+#sudo mkdir -p /media/{data,robuntu}     # my common partions
+sudo mkdir -p  /mnt/{elementary,voyager,gnome,test}
 sudo cp /etc/fstab /etc/fstab.original
 
 
-sudo chown ra:robuntu /media/robuntu/ -R
+#sudo chown ra:robuntu /media/robuntu/ -R
 # partition 'robuntu' is private
-chmod 700 /media/robuntu/
-sudo chown ra:dev /media/data/
+#chmod 770 /media/robuntu/
+#sudo chown ra:dev /media/data/
 
 # grab my dotfiles
 git clone https://github.com/rballen/dotfiles.git
@@ -103,6 +102,7 @@ ln -s /media/data/m2 ~/.m2
 # add my wallpaper for easy switching
 mkdir -p ~/Pictures/wallpaper
 ln -s /media/data/Dropbox/Media/wallpaper/abstract/ ~/Pictures/wallpaper/
+ln -s /media/data/Dropbox/Media/wallpaper/backgrounds/ ~/Pictures/backgrounds/
 ln -s /media/data/Dropbox/Media/wallpaper/nature/ ~/Pictures/wallpaper/
 ln -s /media/data/Dropbox/Media/wallpaper/the-gods/ ~/Pictures/wallpaper/
 
