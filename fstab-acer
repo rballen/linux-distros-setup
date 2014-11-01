@@ -1,0 +1,22 @@
+# /etc/fstab: acer laptop 
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+
+# booted into eos freya on 20G SSD with the home partition on /dev/sda3 
+# /dev/sdb1 (ssd) eos freya 
+UUID=6c4de58c-671c-4903-a126-b2bd3b61e1be /               ext4    noatime,noatime,errors=remount-ro 0       1
+/dev/sda3  /home           ext4    defaults,noatime        0       2
+
+# shared common partitions - swap, data(resources) ,  robuntu is private
+/dev/sda2   none            swap    sw                      0       0
+/dev/sda7  /media/data      ext4    defaults,noatime        0       2
+/dev/sda8  /media/robuntu   ext4    defaults,noatime,uid=1000,gid=1111,umask=007        0       2
+
+# other distros kept hidden and ro
+/dev/sda4   /mnt/voyager    ext4     noauto,nouser,ro  0  0
+/dev/sda5   /mnt/gnome      ext4     noauto,nouser,ro 0  0
+/dev/sda6   /mnt/test       ext4     noauto,nouser,ro 0  0
