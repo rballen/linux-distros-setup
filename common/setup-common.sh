@@ -8,12 +8,10 @@
 # default ubuntu groups: 4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),112(lpadmin),124(sambashare)
 sudo groupadd robuntu -g 1111
 sudo groupadd dev -g 1112
-sudo usermod -aG robuntu,dev,fuse ra    # added fuse to help connecting with ios stuff
+sudo usermod -aG robuntu,dev ra    # added fuse to help connecting with ios stuff
 sudo usermod -g dev ra
 
-mkdir -p ~/.local/bin
-mkdir -p ~/tmp
-mkdir ~p ~/bin
+mkdir -p ~/{.local/bin,tmp,bin}
 cd ~/bin
 git clone git://github.com/huyng/bashmarks.git
 cd bashmarks
@@ -30,7 +28,8 @@ make install
 
 #UUID=A80E38E70E38B064 /mnt/Storage ntfs-3g  defaults,umask=077,uid=1000 0 0
 
-#sudo mkdir -p /media/{data,robuntu}     # my common partions
+#sudo mkdir -p /media/{data,robuntu}     # my common partion
+# sudo mkdir /mnt/{voyager,fedora,ubuntu,system,win7}
 sudo mkdir -p  /mnt/{elementary,voyager,gnome,test}
 sudo cp /etc/fstab /etc/fstab.original
 
