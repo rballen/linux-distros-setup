@@ -3,7 +3,6 @@
 
 wget https://raw.githubusercontent.com/creationix/nvm/v0.17.3/install.sh
 sh install.sh
-dos2unix ~/.nvm/nvm.sh
 source ~/.bashrc
 nvm ls-remote       # lists versions - visit nodejs.org to find the official prod version. Today its v0.10.33
 nvm install v0.10.33
