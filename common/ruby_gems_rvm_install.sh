@@ -10,7 +10,8 @@ echo '## ruby'
 echo ". $HOME/.rvm/scripts/rvm" >> ~/.bashrc
 
 source ~/.bashrc
-echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
+echo "gem: --user-install" >> ~/.gemrc
 gem update --system
 
 gem install sass compass bourbon  
