@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo apt-get install curl
+sudo apt-get install git-core curl build-essential python-software-properties sqlite3
+sudo apt-get install zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev 
 \curl -L https://get.rvm.io | bash -s stable --ignore-dotfiles
 source ~/.rvm/scripts/rvm
 rvm list known
