@@ -1,15 +1,18 @@
 #!/bin/bash
 sudo apt-get install git-core curl build-essential python-software-properties sqlite3
 sudo apt-get install zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev 
-\curl -L https://get.rvm.io | bash -s stable --ignore-dotfiles
+gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable 
 source ~/.rvm/scripts/rvm
 rvm list known
-rvm install 2.1.1 --autolibs=2
+rvm install 2.1 --autolibs=read-fail
 echo 'install missing packages'
-echo 'then run: rvm install 2.1.1 --autolibs=2'
+rvm install 2.1 --autolibs=read-fail
 echo '## ruby'
 echo ". $HOME/.rvm/scripts/rvm" >> ~/.bashrc
 
+echo "GEM_HOME=/home/ra/.gem/ruby/2.1.0/bin" >> ~/.profile
+echo "PATH=$GEM_HOME:$PATH"
 source ~/.bashrc
 echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
 echo "gem: --user-install" >> ~/.gemrc
