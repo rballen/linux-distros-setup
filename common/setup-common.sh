@@ -6,6 +6,14 @@
 
 # user & groups
 # default ubuntu groups: 4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),112(lpadmin),124(sambashare)
+# odroid groups: sudo usermod -aG odroid,adm,dialout,fax,cdrom,floppy,tape,sudo,audio,dip,video,plugdev,netdev,nopasswdlogin,lpadmin,scanner,fuse ra
+
+sudo adduser ra
+sudo visudo 
+# paste below the line containing: root    ALL=(ALL:ALL) ALL
+# exit and save with ctrl-kx
+ra      ALL=(ALL:ALL) ALL
+
 sudo groupadd robuntu -g 1111
 sudo groupadd dev -g 1112
 sudo usermod -aG robuntu,dev ra    # added fuse to help connecting with ios stuff
