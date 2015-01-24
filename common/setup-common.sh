@@ -124,8 +124,6 @@ sudo chown ra:dev /var/www
 # # change ownership and all subdir/files, for all new file/folders to have group dev wit h sticky bit
 # sudo chown -R www-data:dev /var/www && sudo chmod g+s /var/www && sudo chmod -R g+w /var/www
 
-
-
 # ln -s /media/data/home/sunflower ~/.config/
 # ln -s /media/data/home/config/sublime-text-3/User ~/.config/sublime-text-3/Packages
 # cp setup/config/bookmarks.xml ~/.local/share/radiotray/
@@ -148,40 +146,5 @@ ln -s /media/data/home/mozilla/rainbow-easel/ ~/.mozilla/firefox/firefox.default
 ln -s /media/data/home/mozilla/sessions/ ~/.mozilla/firefox/firefox.default/sessions
 ln -s /media/data/home/mozilla/stylish.sqlite ~/.mozilla/firefox/firefox.default/stylish.sqlite
 
-#
-
-# opera sessions
-echo 'run opera, close opera and link sessions across distros'
-cd ~/.opera
-rm -rf sessions
-ln -s /media/data/home/opera/sessions .
 
 
-# startup sound
-sudo cp /media/data/Graphics/om-start3.ogg /usr/share/sound
-
-
-echo 'set root password'
-echo 'ubuntu:$ sudo su; passwd'
-
-
-echo "download and install sublime-text3"
-firefox http://www.sublimetext.com/3
-
-echo "install package manager for sublime-text-3"
-https://sublime.wbond.net/installation#st3
-
-echo "download chrome and install: sudo dpkg -i google-chrome"
-firefox https://www.google.com/intl/en/chrome/browser/thankyou.html?brand=CHFX
-
-echo "download hangouts plugin"
-firefox https://www.google.com/tools/dlpage/hangoutplugin
-
-echo " download opera"
-firefox http://www.opera.com/
-
-echo "intel graphics driver"
-https://01.org/linuxgraphics/downloads
-
-echo "download virtual box "
-https://www.virtualbox.org/wiki/Downloads
