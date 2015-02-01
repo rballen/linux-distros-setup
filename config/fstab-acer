@@ -30,4 +30,5 @@
 /dev/sda4   /mnt/voyager    ext4     noauto,nouser,ro  0  0
 /dev/sda5   /mnt/gnome      ext4     noauto,nouser,ro 0  0
 /dev/sda6   /mnt/test       ext4     noauto,nouser,ro 0  0
-~
+# samba
+//media-net/dropbox  /media/samba_dropbox  cifs  credentials=/etc/samba/user,noexec  0 0
