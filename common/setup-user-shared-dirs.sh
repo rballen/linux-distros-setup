@@ -13,10 +13,10 @@
 # paste below the line containing: root    ALL=(ALL:ALL) ALL
 # exit and save with ctrl-kx
 #ra      ALL=(ALL:ALL) ALL
-
+sudo groupadd samba
 sudo groupadd robuntu -g 1111
 sudo groupadd dev -g 1112
-sudo usermod -aG robuntu,dev ra    # added fuse to help connecting with ios stuff
+sudo usermod -aG robuntu,dev,samba ra    # added fuse to help connecting with ios stuff
 sudo usermod -g dev ra
 
 mkdir -p ~/{.local/bin,tmp,bin}
