@@ -1,12 +1,14 @@
-127.0.0.1 localhost.localdomain localhost
+# virutal domains on acer
+127.0.0.1       localhost.localdomain localhost
+127.0.1.1       cdn.local
+127.0.1.1       ui.local
+127.0.1.1       robuntu.local
+127.0.1.1       ombuntu.local
 
-127.0.1.1   cdn.local
-127.0.1.1	  ui.local
-127.0.1.1   robuntu.local
-127.0.1.1   ombuntu.local
+# router
+192.168.1.1     my.router
 
-192.168.1.1 my.router
-
+# my lan
 192.168.1.5     pi
 192.168.1.10    odroid
 192.168.1.2     prime
