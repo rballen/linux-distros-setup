@@ -19,26 +19,23 @@ sudo groupadd dev -g 1112
 sudo usermod -aG robuntu,dev,samba ra    # added fuse to help connecting with ios stuff
 sudo usermod -g dev ra
 
+cd
+# grab my dotfiles
+#git clone https://github.com/rballen/dotfiles.git
+wget https://raw.githubusercontent.com/rballen/dotfiles/master/.gitignore
+wget https://raw.githubusercontent.com/rballen/dotfiles/master/.bash_aliases
+wget https://raw.githubusercontent.com/rballen/dotfiles/master/.bash_functions
+wget https://raw.githubusercontent.com/rballen/dotfiles/master/.profile
+wget https://raw.githubusercontent.com/rballen/dotfiles/master/.bashrc
+wget -O ~/.config/youtube-dl.conf https://raw.githubusercontent.com/rballen/dotfiles/master/.config/youtube-dl.conf 
+
 mkdir -p ~/{.local/bin,tmp,bin}
 cd ~/bin
 git clone git://github.com/huyng/bashmarks.git
 cd bashmarks
 make install
 
-
-# # generate ssh keys
-# echo "generating ssh keys"
-# ssh-keygen -t rsa -C "robert.burch.allen@gmail.com"
-# # passphrase like root's; enter for file name and anything else
-
-# # add key to ssh-agent
-# ssh-add ~/.ssh/id_rsa
-
-#UUID=A80E38E70E38B064 /mnt/Storage ntfs-3g  defaults,umask=077,uid=1000 0 0
-
-#sudo mkdir -p /media/{data,robuntu}     # my common partion
-# sudo mkdir /mnt/{voyager,fedora,ubuntu,system,win7}
-sudo mkdir -p  /mnt/{elementary,voyager,gnome,test}
+sudo mkdir -p  /mnt/{elementary,deepen,gnome,test}
 sudo cp /etc/fstab /etc/fstab.original
 
 
@@ -47,8 +44,7 @@ sudo cp /etc/fstab /etc/fstab.original
 #chmod 770 /media/robuntu/
 #sudo chown ra:dev /media/data/
 
-# grab my dotfiles
-git clone https://github.com/rballen/dotfiles.git
+
 
 # common resources
 ln -s /media/data/home/fonts ~/.fonts
@@ -102,8 +98,6 @@ ln -s /media/data/Videos ~/
 ln -s /media/data/Trippy-Gods ~/
 ln -s /media/data/home/linux-distros-setup/Templates/ ~/
 
-ln -s /media/data/home/conky/ ~/.conky
-ln -s /media/data/home/conky-weather/ ~/.conky-weather
 
 ln -s /media/data/m2 ~/.m2
 # add my wallpaper for easy switching
