@@ -11,10 +11,10 @@ elif [ -d /etc/pacman.d ] ; then
   sudo pacman -S git curl base-devel
 fi
 
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get install -y software-properties-common
+sudo apt-add-repository -y ppa:brightbox/ruby-ng
 sudo apt-get update
-sudo apt-get install ruby2.2
+sudo apt-get install -y ruby2.2
 
 # install gems && find them here: https://rubygems.org/
 echo "gem: --no-document" >> ~/.gemrc    # dont install documentation
