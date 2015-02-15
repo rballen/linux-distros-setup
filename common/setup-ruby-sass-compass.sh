@@ -11,25 +11,12 @@ elif [ -d /etc/pacman.d ] ; then
   sudo pacman -S git curl base-devel
 fi
 
-# install rvm, set paths and source
-curl -L get.rvm.io | bash -s stable
-#gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-echo '# ruby' >> ~/.bashrc
-echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
-echo 'export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting' >> ~/.bashrc
-source ~/.rvm/scripts/rvms
-
-# install latest ruby via rvm
-rvm requirements
-rvm list known      # list available rubies 
-rvm install ruby    # install latest ruby
-rvm default
-ruby -v
-which ruby
-rvm list            # list locally installed rubies
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get update
+sudo apt-get install ruby2.2
 
 # install gems && find them here: https://rubygems.org/
-rvm rubygems current
 echo "gem: --no-document" >> ~/.gemrc    # dont install documentation
 gem install sass compass bourbon
 gem install compass-colors color-schemer
