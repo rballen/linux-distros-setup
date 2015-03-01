@@ -14,9 +14,10 @@
 # exit and save with ctrl-kx
 #ra      ALL=(ALL:ALL) ALL
 sudo groupadd samba
+sudo groupadd admin
 sudo groupadd robuntu -g 1111
 sudo groupadd dev -g 1112
-sudo usermod -aG robuntu,dev,samba ra    # added fuse to help connecting with ios stuff
+sudo usermod -aG admin,robuntu,dev,samba ra    # added fuse to help connecting with ios stuff
 sudo usermod -g dev ra
 
 cd
