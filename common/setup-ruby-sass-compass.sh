@@ -4,28 +4,26 @@
 # rvm requirements will list other dependancies
 
 if [ -f /etc/debian_version ] ; then
-  sudo apt-get install git-core curl build-essential python-software-properties sqlite3
+  sudo apt-get install git-core curl build-essential python-software-properties sqlite3 software-properties-common
   sudo apt-get install zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev 
-elif [ -d /etc/pacman.d ] ; then
-  sudo pacman -Sy
-  sudo pacman -S git curl base-devel
+  sudo apt-add-repository -y ppa:brightbox/ruby-ng
+  sudo apt-get update
+  sudo apt-get install -y ruby2.2 ruby2.2-dev
+#elif [ -d /etc/pacman.d ] ; then
+#  sudo pacman -Sy
+#  sudo pacman -S git curl base-devel
 fi
-
-sudo apt-get install -y software-properties-common
-sudo apt-add-repository -y ppa:brightbox/ruby-ng
-sudo apt-get update
-sudo apt-get install -y ruby2.2
 
 # install gems && find them here: https://rubygems.org/
 echo "gem: --no-document" >> ~/.gemrc    # dont install documentation
-gem install sass compass bourbon
-gem install compass-colors color-schemer
-gem install respond-to modular-scale
+sudo gem install sass compass bourbon
+sudo gem install compass-colors color-schemer
+sudo gem install respond-to modular-scale
 #gem install breakpoint breakpoint-slicer
 #gem install cheat snipcheat
 gem list            # list installed gemsets
 
-gem update --system && gem update      # update rubygem and installed gems
+sudo gem update --system && sudo gem update      # update rubygem and installed gems
 
 
 
